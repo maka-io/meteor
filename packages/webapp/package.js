@@ -20,8 +20,8 @@ Npm.strip({
 });
 
 Cordova.depends({
-  'cordova-plugin-whitelist': '1.3.3',
-  'cordova-plugin-wkwebview-engine': '1.1.4',
+  'cordova-plugin-whitelist': '1.3.4',
+  'cordova-plugin-wkwebview-engine': '1.2.1',
   'cordova-plugin-meteor-webapp': '1.7.0'
 });
 

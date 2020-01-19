@@ -243,16 +243,19 @@ outdated platforms`);
 
     // Temporary workaround for Cordova iOS bug until
     // https://issues.apache.org/jira/browse/CB-10885 is fixed
+    /* FIXED
     const iosBuildExtrasPath =
       files.pathJoin(
         this.projectRoot,
         'platforms/ios/cordova/build-extras.xcconfig');
+
 
     if (files.exists(iosBuildExtrasPath)) {
       files.writeFile(
         iosBuildExtrasPath,
         'LD_RUNPATH_SEARCH_PATHS = @executable_path/Frameworks;');
     }
+    */
 
     builder.copyBuildOverride();
   }
@@ -262,10 +265,13 @@ outdated platforms`);
 
     // Temporary workaround for Cordova iOS bug until
     // https://issues.apache.org/jira/browse/CB-11731 has been released
+    // FIXED
+    /*
     delete require.cache[files.pathJoin(this.projectRoot,
       'platforms/ios/cordova/lib/configMunger.js')];
     delete require.cache[files.pathJoin(this.projectRoot,
       'platforms/ios/cordova/lib/prepare.js')];
+      */
 
     const commandOptions = {
       ...this.defaultOptions,

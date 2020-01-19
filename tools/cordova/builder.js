@@ -303,6 +303,7 @@ export class CordovaBuilder {
 
     const platformElement = {
       ios: config.element('platform', {name: 'ios'}),
+      osx: config.element('platform', {name: 'osx'}),
       android: config.element('platform', {name: 'android'})
     }
 
@@ -332,7 +333,8 @@ export class CordovaBuilder {
     this.configureAndCopyResourceFiles(
       this.resourceFiles,
       platformElement.ios,
-      platformElement.android
+      platformElement.android,
+      platformElement.osx
     );
 
     Console.debug('Writing new config.xml');
@@ -585,9 +587,9 @@ function createAppConfiguration(builder) {
      */
     setPreference: function (key, value, platform) {
       if (platform) {
-        if (!_.contains(['ios', 'android'], platform)) {
+        if (!_.contains(['ios', 'android', 'osx'], platform)) {
           throw new Error(`Unknown platform in App.setPreference: ${platform}. \
-Valid platforms are: ios, android.`);
+Valid platforms are: ios, android, or osx`);
         }
 
         builder.additionalConfiguration.platform[platform][key] = value;
