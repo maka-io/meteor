@@ -11,22 +11,27 @@ import {
 
 export const CORDOVA_ARCH = "web.cordova";
 
-export const CORDOVA_PLATFORMS = ['ios', 'android'];
+export const CORDOVA_PLATFORMS = ['ios', 'android', 'osx', 'windows'];
 
 export const CORDOVA_DEV_BUNDLE_VERSIONS = {
   'cordova-lib': '9.0.1',
   'cordova-common': '3.2.1',
   'cordova-registry-mapper': '1.1.15',
+  'cordova-utils': '1.0.0'
 };
 
 export const CORDOVA_PLATFORM_VERSIONS = {
   'android': '8.1.0',
   'ios': '5.1.1',
+  'osx': '5.0.0',
+  'windows': '7.0.0'
 };
 
 const PLATFORM_TO_DISPLAY_NAME_MAP = {
   'ios': 'iOS',
-  'android': 'Android'
+  'android': 'Android',
+  'osx': 'Mac OSX',
+  'windows': 'Windows'
 };
 
 export function ensureDevBundleDependencies() {

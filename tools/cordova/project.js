@@ -52,29 +52,26 @@ const pinnedPlatformVersions = CORDOVA_PLATFORM_VERSIONS;
 // Versions are taken from cordova-lib's package.json and should be updated
 // when we update to a newer version of cordova-lib.
 const pinnedPluginVersions = {
-  "cordova-plugin-battery-status": "1.2.4",
-  "cordova-plugin-camera": "2.4.1",
-  "cordova-plugin-console": "1.1.0", // Deprecated, remove in future
-  "cordova-plugin-contacts": "2.3.1",
-  "cordova-plugin-device": "1.1.6",
-  "cordova-plugin-device-motion": "2.0.0", // Deprecated, remove in future
-  "cordova-plugin-device-orientation": "2.0.0", // Deprecated, remove in future
-  "cordova-plugin-dialogs": "1.3.3",
-  "cordova-plugin-file": "4.3.3",
-  "cordova-plugin-file-transfer": "1.6.3",
-  "cordova-plugin-geolocation": "2.4.3",
-  "cordova-plugin-globalization": "1.0.7",
-  "cordova-plugin-inappbrowser": "1.7.1",
-  "cordova-plugin-legacy-whitelist": "1.1.2",
-  "cordova-plugin-media": "3.0.1",
-  "cordova-plugin-media-capture": "1.4.3",
-  "cordova-plugin-network-information": "1.3.3",
-  "cordova-plugin-splashscreen": "4.1.0",
-  "cordova-plugin-statusbar": "2.3.0",
-  "cordova-plugin-test-framework": "1.1.5",
-  "cordova-plugin-vibration": "2.1.5",
-  "cordova-plugin-whitelist": "1.3.2",
-  "cordova-plugin-wkwebview-engine": "1.1.3"
+  "cordova-plugin-battery-status": "2.0.3",
+  "cordova-plugin-camera": "4.1.0",
+  "cordova-plugin-device": "2.0.3",
+  "cordova-plugin-device-motion": "2.0.1", // Deprecated, remove in future
+  "cordova-plugin-device-orientation": "2.0.1", // Deprecated, remove in future
+  "cordova-plugin-dialogs": "2.0.2",
+  "cordova-plugin-file": "6.0.2",
+  "cordova-plugin-file-transfer": "1.7.1",
+  "cordova-plugin-geolocation": "4.0.2",
+  "cordova-plugin-globalization": "1.11.0",
+  "cordova-plugin-inappbrowser": "3.1.0",
+  "cordova-plugin-media": "5.0.3",
+  "cordova-plugin-media-capture": "3.0.3",
+  "cordova-plugin-network-information": "2.0.2",
+  "cordova-plugin-splashscreen": "5.0.3",
+  "cordova-plugin-statusbar": "2.4.3",
+  "cordova-plugin-test-framework": "1.1.6",
+  "cordova-plugin-vibration": "3.1.1",
+  "cordova-plugin-whitelist": "1.3.4",
+  "cordova-plugin-wkwebview-engine": "1.2.1"
 }
 
 export class CordovaProject {

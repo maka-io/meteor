@@ -61,7 +61,7 @@ sourceMapSupport.install({
   // be able to locate the proper source code to display.  (Note that the
   // stack trace of an uncaught exception will be correctly source-mapped
   // independent of this option.)
-  handleUncaughtExceptions: false,
+  handleUncaughtExceptions: true,
   wrapCallSite
 });
 
@@ -75,5 +75,6 @@ Error.METEOR_prepareStackTrace = Error.prepareStackTrace;
 push(sourceMapSupport.retrieveSourceMap);
 
 /* eslint-disable max-len */
-push(require('meteor-babel/register').retrieveSourceMap); // #RemoveInProd this line is removed in isopack.js
+/* THIS BREAKS DEV */
+//push(require('meteor-babel/register').retrieveSourceMap); // #RemoveInProd this line is removed in isopack.js
 /* eslint-enable max-len */

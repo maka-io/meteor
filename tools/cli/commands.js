@@ -20,7 +20,7 @@ const { Profile } = require("../tool-env/profile");
 
 import { ensureDevBundleDependencies } from '../cordova/index.js';
 import { CordovaRunner } from '../cordova/runner.js';
-import { iOSRunTarget, AndroidRunTarget } from '../cordova/run-targets.js';
+import { iOSRunTarget, AndroidRunTarget, OSXRunTarget } from '../cordova/run-targets.js';
 
 import { EXAMPLE_REPOSITORIES } from './example-repositories.js';
 
@@ -153,6 +153,8 @@ export function parseRunTargets(targets) {
 
     if (platform == 'ios') {
       return new iOSRunTarget(isDevice);
+    } else if (platform == 'osx') {
+      return new OSXRunTarget(isDevice);
     } else if (platform == 'android') {
       return new AndroidRunTarget(isDevice);
     } else {
@@ -1670,7 +1672,7 @@ function doTestCommand(options) {
   }
 
   const runTargets = parseRunTargets(_.intersection(
-    Object.keys(options), ['ios', 'ios-device', 'android', 'android-device']));
+    Object.keys(options), ['ios', 'ios-device', 'android', 'android-device', 'osx', 'windows']));
 
   const { parsedServerUrl, parsedMobileServerUrl, parsedCordovaServerPort } =
     parseServerOptionsForRunCommand(options, runTargets);

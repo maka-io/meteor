@@ -48,6 +48,19 @@ end tell`]);
   }
 }
 
+export class OSXRunTarget extends CordovaRunTarget {
+  constructor(isDevice) {
+    super();
+    this.platform = 'osx';
+    this.isDevice = isDevice;
+  }
+
+  async start(cordovaProject) {
+      await cordovaProject.run(this.platform, this.isDevice, undefined);
+    }
+}
+
+
 function openXcodeProject(projectDir) {
   const projectFilename =  files.readdir(projectDir).filter((entry) =>
     { return entry.match(/\.xcodeproj$/i) })[0];
@@ -70,7 +83,7 @@ function openXcodeProject(projectDir) {
         "wiki page: ") +
       Console.url(
         "https://guide.meteor.com/mobile.html#running-on-ios"
-    ));
+      ));
     Console.info();
   } catch (error) {
     printFailure(`Failed to open your project in Xcode:
@@ -171,7 +184,7 @@ function logFromAndroidLogcatLine(Log, line) {
   // "I/Tag(  PID): message"
   let match =
     line.match(/^([A-Z])\/([^\(]*?)\(\s*(\d+)\): (.*)$/);
-    let priority, tag, pid, message, logLevel, filename, lineNumber;
+  let priority, tag, pid, message, logLevel, filename, lineNumber;
 
   if (match) {
     [, priority, tag, pid, message] = match;
