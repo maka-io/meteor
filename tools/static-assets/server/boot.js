@@ -369,6 +369,20 @@ var loadServerBundles = Profile("Load server bundles", function () {
         var filePath = path.join(serverDir, fileInfo.assets[assetPath]);
         return files.convertToOSPath(filePath);
       },
+            /**
+       * @summary Get the absolute path to the static server directory. Note that directories are read-only.
+       * @locus Server [Not in build plugins]
+       * @memberOf Assets
+       * @param {String} path The path of the directory, relative to the application's `private` subdirectory.
+       */
+      absoluteDirPath: function (path) {
+        // Unicode normalize the path to prevent string mismatches when
+        // using this string elsewhere.
+        path = files.unicodeNormalizePath(path);
+
+        var dirPath = path.join(serverDir, path]);
+        return dirPath
+      },
     };
 
     var wrapParts = ["(function(Npm,Assets"];
